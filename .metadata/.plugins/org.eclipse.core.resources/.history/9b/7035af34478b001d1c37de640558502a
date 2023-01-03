@@ -1,0 +1,17 @@
+package com.myspring.pro30.board.dao;
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+
+import com.myspring.pro30.board.vo.ArticleVO;
+
+public class BoardDAOImpl implements BoardDAO {
+
+	@Override
+	public List selectAllArticlesList() throws DataAccessException {
+		List<ArticleVO> articlesList = sqlSession.selectList("mapper.board.selectAllArticlesList");
+		return null;
+	}
+	
+}
