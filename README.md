@@ -64,6 +64,21 @@
 
 ---
 
+###### ◾  aop 활용
+
+@EnableAspectJAutoProxy 주석처리
+
+<img src="images/1_desc/autoproxy.png" width="400" height="300"> 
+
+aop를 추가 및 체크
+
+<img src="images/1_desc/autoproxy_root-context.png" width="400" height="300">
+
+
+<img src="images/1_desc/autoproxy_root-context(2).png" width="400" height="300">
+
+---
+
 <br>
 <br>
 
