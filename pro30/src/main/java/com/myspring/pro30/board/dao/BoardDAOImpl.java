@@ -16,18 +16,26 @@ public class BoardDAOImpl implements BoardDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	// 글 목록 보기
 	@Override
 	public List selectAllArticlesList() throws DataAccessException {
 		List<ArticleVO> articlesList = sqlSession.selectList("mapper.board.selectAllArticlesList");
 		return articlesList;
 	}
 	
+	// 새 글 등록
 	@Override
 	public int insertNewArticle(Map articleMap) throws DataAccessException {
 		int articleNO = selectNewArticleNO();  
 		articleMap.put("articleNO", articleNO);
 		sqlSession.insert("mapper.board.insertNewArticle",articleMap);
 		return articleNO;
+	}
+	
+	// 글 선택
+	@Override
+	public ArticleVO selectArticle(int articleNO) throws DataAccessException {
+		return sqlSession.selectOne("mapper.board.selectArticle", articleNO);
 	}
 	
 	// 글 번호 얻어오기 기능

@@ -127,8 +127,38 @@ aop를 추가 및 체크
 
 ```
 ---
+---
 
-<!-- 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ -->
+### CRUD 기능
+
+<br>
+
+#### 3️⃣ - 1️⃣ complete - 글 상세 보기 [SELECT]
+
+<br>
+
+##### ◾ 글 상세 보기 (1) - 로그인 하지 않은 경우
+
+<img src="images/3_1complete/not_logged_in.png" width="400" height="200">
+
+<br>
+
+##### ◾ 글 상세 보기 (2) - 로그인(일반 회원)
+
+<img src="images/3_1complete/name_hong.png" width="400" height="200">
+
+<br>
+
+##### ◾ 글 상세 보기 (3) - 로그인(작성자)
+
+<img src="images/3_1complete/name_hone_2.png" width="400" height="200">
+
+---
+
+<br>
+
+
+<!--1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ -->
 
 
 

@@ -25,9 +25,16 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	//단일 이미지 추가하기
-		@Override
-		public int addNewArticle(Map articleMap) throws Exception{
-			return boardDAO.insertNewArticle(articleMap);
-		}
+	@Override
+	public int addNewArticle(Map articleMap) throws Exception {
+		return boardDAO.insertNewArticle(articleMap);
+	}
+		
+	//단일 파일 보이기
+	@Override
+	public ArticleVO viewArticle(int articleNO) throws Exception {
+		ArticleVO articleVO = boardDAO.selectArticle(articleNO);
+		return articleVO;
+	}
 	
 }
