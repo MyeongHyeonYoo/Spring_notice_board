@@ -12,3 +12,15 @@
 1672756229992	Move 'config' to 'WEB-INF'
 1672756455965	Move 'action-mybatis.xml' to 'config'
 1672756507486	Move 'action-mybatis.xml' to 'spring'
+1673088461836	Move 'main.jsp' to 'webapp'
+1673088543295	Move 'main.jsp' to 'views'
+1673088548319	Move 'home.jsp' to 'webapp'
+1673088590618	Move 'home.jsp' to 'views'
+1673098449203	Delete element
+1673099338854	Move file
+1673099371634	Move 'main.jsp' to 'views'
+1673099384335	Copy compilation unit
+1673099387453	Delete element
+1673102151153	Delete element
+1673103326241	Delete element
+1673104524673	Delete element

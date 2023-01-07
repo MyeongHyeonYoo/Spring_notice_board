@@ -1,6 +1,7 @@
-package com.myspring.pro30.board.dao;
+ package com.myspring.pro30.board.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,17 @@ public class BoardDAOImpl implements BoardDAO {
 		return articlesList;
 	}
 	
+	@Override
+	public int insertNewArticle(Map articleMap) throws DataAccessException {
+		int articleNO = selectNewArticleNO();  
+		articleMap.put("articleNO", articleNO);
+		sqlSession.insert("mapper.board.insertNewArticle",articleMap);
+		return articleNO;
+	}
+	
+	// 글 번호 얻어오기 기능
+	// 클래스 내에서만 사용하기 때문에 private으로 지정해서 사용
+	private int selectNewArticleNO() throws DataAccessException {
+		return sqlSession.selectOne("mapper.board.selectNewArticleNO");
+	}
 }
