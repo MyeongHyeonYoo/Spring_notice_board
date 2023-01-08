@@ -7,3 +7,6 @@
     
  ▼ 3-1. Spring Notice_board [스프링 게시판]
       complete 3-1차: 글 상세 보기
+
+ ▼ 3-2. Spring Notice_board [스프링 게시판]
+      complete 3-2차: 글 수정

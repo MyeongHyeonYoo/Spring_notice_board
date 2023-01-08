@@ -55,5 +55,16 @@
       where articleNO = #{articleNO}		
     ]]>
   </select>
+  
+  <update id="updateArticle"  parameterType="java.util.Map">
+			update t_board
+			set title=#{title},	content=#{content}
+			<!-- 수정한 파일을 첨부하였을 경우 -->
+			 <if test="imageFileName!='' and imageFileName!=null">
+			 	<!-- 이미지 파일을 수정 안 하는 경우, 이미지 파일 이름 동일하다. -->
+			  , imageFileName=#{imageFileName}
+			</if>
+			where articleNO=#{articleNO}
+	</update>
 	
 </mapper>

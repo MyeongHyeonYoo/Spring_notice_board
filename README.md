@@ -129,7 +129,7 @@ aop를 추가 및 체크
 ---
 ---
 
-### CRUD 기능
+### ◾ CRUD 기능
 
 <br>
 
@@ -139,23 +139,49 @@ aop를 추가 및 체크
 
 ##### ◾ 글 상세 보기 (1) - 로그인 하지 않은 경우
 
-<img src="images/3_1complete/not_logged_in.png" width="400" height="200">
+<img src="images/3_1complete/not_logged_in.png" width="500" height="300">
 
 <br>
 
 ##### ◾ 글 상세 보기 (2) - 로그인(일반 회원)
 
-<img src="images/3_1complete/name_hong.png" width="400" height="200">
+<img src="images/3_1complete/name_hong.png" width="500" height="300">
 
 <br>
 
 ##### ◾ 글 상세 보기 (3) - 로그인(작성자)
 
-<img src="images/3_1complete/name_hone_2.png" width="400" height="200">
+<img src="images/3_1complete/name_hone_2.png" width="500" height="300">
 
 ---
 
+#### 3️⃣ - 2️⃣ complete - 글 수정 [UPDATE]
+
 <br>
+
+##### ◾ 수정하기 - 아래 '수정' 버튼 누르기
+<img src="images/3_2complete/modify.png" width="500" height="300">
+
+<br>
+
+##### ◾ 수정하기 - '수정반영하기' 버튼 활성화 / 파일 업로드 활성화
+<img src="images/3_2complete/new_modify_button.png" width="500" height="300">
+
+<br>
+
+##### ◾ 수정하기 - 이미지 변경(내용 변경)
+<img src="images/3_2complete/image_modify.png" width="500" height="300">
+
+##### ◾ 수정 메시지
+<img src="images/3_2complete/modify_message.png" width="300" height="200">
+
+<br>
+
+##### ◾ 수정 결과
+<img src="images/3_2complete/modify_result.png" width="500" height="300">
+
+---
+
 
 
 <!--1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ -->

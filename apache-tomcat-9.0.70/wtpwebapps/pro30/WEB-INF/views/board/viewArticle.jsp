@@ -115,6 +115,7 @@ request.setCharacterEncoding("UTF-8");
 				<c:otherwise>
 					<tr id="tr_file_upload">
 						<td width="150" align="center" bgcolor="#FF9933" rowspan="2">이미지</td>
+						<!-- 기존 이미지 파일을 hidden type으로 저장 -->
 						<td><input type="hidden" name="originalFileName" value="${article.imageFileName }" /></td>
 					</tr>
 					<tr>
