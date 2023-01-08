@@ -33,6 +33,14 @@ request.setCharacterEncoding("UTF-8");
 		 document.getElementById("tr_btn_modify").style.display="block";
 		 document.getElementById("tr_file_upload").style.display="block";
 		 document.getElementById("tr_btn").style.display="none";
+		 
+		 /* document.getElementById("tr_file_upload").style.display="block"; */
+		 
+		 document.getElementById("tr_file_upload").style.visibility="visible";
+		 document.getElementById("tr_file_upload2").style.visibility="visible";
+		 document.getElementById("tr_file_upload3").style.visibility="visible";
+		 
+		 
 	 }
 	 
 	 function fn_modify_article(obj){
@@ -97,7 +105,7 @@ request.setCharacterEncoding("UTF-8");
 			</tr>
 			<tr>
 				<td width="150" align="center" bgcolor="#FF9933">내용</td>
-				<td><textarea rows="20" cols="60" name="content" id="i_content" disabled />${article.content }</textarea></td>
+				<td><textarea rows="20" cols="60" name="content" id="i_content" disabled>${article.content }</textarea></td>
 			</tr>
 
 			<c:choose>
@@ -113,7 +121,8 @@ request.setCharacterEncoding("UTF-8");
 					</tr>
 				</c:when>
 				<c:otherwise>
-					<tr id="tr_file_upload">
+					<!-- 기존 소스 -->
+					<%-- <tr id="tr_file_upload">
 						<td width="150" align="center" bgcolor="#FF9933" rowspan="2">이미지</td>
 						<!-- 기존 이미지 파일을 hidden type으로 저장 -->
 						<td><input type="hidden" name="originalFileName" value="${article.imageFileName }" /></td>
@@ -121,6 +130,22 @@ request.setCharacterEncoding("UTF-8");
 					<tr>
 						<td></td>
 						<td><img id="preview" /><br> <input type="file" name="imageFileName " id="i_imageFileName" disabled onchange="readURL(this);" /></td>
+					</tr> --%>
+					
+					<!-- 강의에서 추가 된 것 - 디자인적인 것 고려하여 추가 -->
+					<tr id="tr_file_upload">
+						<td width="150" align="center" bgcolor="#FF9933" rowspan="2">이미지</td>
+						<!-- 기존 이미지 파일을 hidden type으로 저장 -->
+						<td><input type="hidden" name="originalFileName" value="${article.imageFileName }" /></td>
+					</tr>
+					
+					<tr id="tr_file_upload2" style="visibility:hidden">
+						<td><img id="preview" /></td>
+						<td></td>
+					</tr>
+					<tr id="tr_file_upload3" style="visibility:hidden">
+						<td></td>
+						<td><input type="file" name="imageFileName " id="i_imageFileName" disabled onchange="readURL(this);" /></td>
 					</tr>
 				</c:otherwise>
 			</c:choose>

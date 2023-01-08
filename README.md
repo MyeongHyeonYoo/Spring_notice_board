@@ -159,6 +159,8 @@ aop를 추가 및 체크
 
 <br>
 
+<이미지를 다른 이미지로 변경하며 글 수정>
+
 ##### ◾ 수정하기 - 아래 '수정' 버튼 누르기
 <img src="images/3_2complete/modify.png" width="500" height="300">
 
@@ -179,6 +181,30 @@ aop를 추가 및 체크
 
 ##### ◾ 수정 결과
 <img src="images/3_2complete/modify_result.png" width="500" height="300">
+
+##### ◾ 이미지 수정 전
+<img src="images/3_2complete/image_before.png" width="300" height="200">
+
+##### ◾ 이미지 수정 후
+<img src="images/3_2complete/image_after.png" width="300" height="200">
+
+<br>
+
+<일반 글에 이미지 추가>
+
+##### ◾ 수정하기 - 글에 이미지 추가
+<img src="images/3_2complete/image_blank_text.png" width="500" height="300">
+<img src="images/3_2complete/add_image.png" width="500" height="300">
+<img src="images/3_2complete/result.png" width="500" height="300">
+
+
+
+##### ◾ 이미지 추가(폴더 생성 후 이미지 저장)
+<img src="images/3_2complete/add_image_folder.png" width="300" height="200">
+
+<br>
+
+
 
 ---
 
