@@ -26,6 +26,10 @@
 
 ---
 
+### ◾ Main, Sub 화면
+
+<br>
+
 #### 1️⃣ complete - 메인 화면, 로그인 화면, 회원 관리, 게시판
 
 <br>
@@ -83,6 +87,10 @@ aop를 추가 및 체크
 ---
 ---
 
+### ◾ CRUD 기능
+
+<br>
+
 #### 2️⃣ complete - 새 글 등록, 글쓰기(파일 업로드)
 
 <br>
@@ -127,11 +135,7 @@ aop를 추가 및 체크
 
 ```
 ---
----
 
-### ◾ CRUD 기능
-
-<br>
 
 #### 3️⃣ - 1️⃣ complete - 글 상세 보기 [SELECT]
 
@@ -202,14 +206,35 @@ aop를 추가 및 체크
 ##### ◾ 이미지 추가(폴더 생성 후 이미지 저장)
 <img src="images/3_2complete/add_image_folder.png" width="300" height="200">
 
-<br>
-
-
-
 ---
 
+#### 3️⃣ - 3️⃣ complete - 글 삭제 [DELETE]
 
+<br>
 
+##### ◾ 초기 글 목록 화면
+
+<img src="images/3_3complete/main.png" width="500" height="300">
+
+<br>
+
+##### ◾ 삭제 진행 (글번호 7, 8번 삭제)
+
+<img src="images/3_3complete/delete.png" width="500" height="300">
+<img src="images/3_3complete/delete_message.png" width="300" height="200">
+
+<br>
+
+##### ◾ 삭제 결과
+
+<img src="images/3_3complete/result.png" width="500" height="300">
+
+##### ◾ 삭제 전 · 후 폴더
+<img src="images/3_3complete/folder.png" width="300" height="200">
+<img src="images/3_3complete/folder_result.png" width="300" height="200">
+
+---
+---
 <!--1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ -->
 
 

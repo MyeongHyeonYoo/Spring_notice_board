@@ -43,4 +43,10 @@ public class BoardServiceImpl implements BoardService {
 		boardDAO.updateArticle(articleMap);
 	}
 	
+	// 게시글 삭제
+	@Override
+	public void removeArticle(int articleNO) throws Exception {
+		boardDAO.deleteArticle(articleNO);
+	}
+	
 }

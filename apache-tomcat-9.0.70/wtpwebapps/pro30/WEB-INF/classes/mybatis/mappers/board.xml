@@ -5,25 +5,22 @@
 
 <mapper namespace="mapper.board">
 	<resultMap id="articlesResult" type="articleVO">
-    <result property="level" column="level" />
-    <result property="articleNO" column="articleNO" />
-    <result property="parentNO" column="parentNO" />
-    <result property="title" column="title" />
-    <result property="content" column="content" />
-    <result property="writeDate" column="writeDate" />
-    <result property="imageFileName" column="imageFileName" />
-  </resultMap> 
-  
-  <!-- 이미지 기능 사용 시 사용  -->
-  <!-- 이미지 첨부 기능 -->
-  <!--  <resultMap id="imgResult" type="imageVO">
-	  <result property="imageFileNO" column="imageFileNO" />
-	  <result property="articleNO" column="articleNO" />
-	  <result property="imageFileName" column="imageFileName" />
- </resultMap> -->
-  	
-  	<!-- 글 목록 보기 -->
-   <select id="selectAllArticlesList" resultMap="articlesResult"   >
+		<result property="level" column="level" />
+		<result property="articleNO" column="articleNO" />
+		<result property="parentNO" column="parentNO" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="writeDate" column="writeDate" />
+		<result property="imageFileName" column="imageFileName" />
+	</resultMap>
+
+	<!-- 이미지 기능 사용 시 사용 -->
+	<!-- 이미지 첨부 기능 -->
+	<!-- <resultMap id="imgResult" type="imageVO"> <result property="imageFileNO" column="imageFileNO" /> <result property="articleNO" column="articleNO" /> <result property="imageFileName" column="imageFileName" 
+		/> </resultMap> -->
+
+	<!-- 글 목록 보기 -->
+	<select id="selectAllArticlesList" resultMap="articlesResult">
     <![CDATA[
       SELECT level, articleNO, parentNO, title, content, writeDate, imageFileName, id
       from t_board
@@ -31,40 +28,51 @@
       CONNECT BY PRIOR articleNO=parentNO 
       ORDER SIBLINGS BY articleNO DESC		
     ]]>
-  </select>
-  
-  <!--단일이미지 추가  -->
-   <insert id="insertNewArticle"  parameterType="java.util.Map">
+	</select>
+
+	<!--단일이미지 추가 -->
+	<insert id="insertNewArticle" parameterType="java.util.Map">
 		<![CDATA[
 			INSERT into t_board(articleNO, title, content, imageFileName, id)
 			VALUES(#{articleNO}, #{title}, #{content}, #{imageFileName}, #{id})
-		]]>      
+		]]>
 	</insert>
-	
+
 	<!-- 글 번호 가져오기 -->
-	<select id="selectNewArticleNO" resultType="int"  >
+	<select id="selectNewArticleNO" resultType="int">
 		<![CDATA[
 			SELECT  max(articleNO) + 1 from t_board		
 		]]>
 	</select>
-	
+
 	<!-- 글 번호로 목록 조회 -->
 	<select id="selectArticle" resultType="articleVO" parameterType="int">
     <![CDATA[
       SELECT * from t_board
       where articleNO = #{articleNO}		
     ]]>
-  </select>
-  
-  <update id="updateArticle"  parameterType="java.util.Map">
-			update t_board
-			set title=#{title},	content=#{content}
-			<!-- 수정한 파일을 첨부하였을 경우 -->
-			 <if test="imageFileName!='' and imageFileName!=null">
-			 	<!-- 이미지 파일을 수정 안 하는 경우, 이미지 파일 이름 동일하다. -->
-			  , imageFileName=#{imageFileName}
-			</if>
-			where articleNO=#{articleNO}
+	</select>
+
+	<update id="updateArticle" parameterType="java.util.Map">
+		update t_board
+		set title=#{title}, content=#{content}
+		<!-- 수정한 파일을 첨부하였을 경우 -->
+		<if test="imageFileName!='' and imageFileName!=null">
+			<!-- 이미지 파일을 수정 안 하는 경우, 이미지 파일 이름 동일하다. -->
+			, imageFileName=#{imageFileName}
+		</if>
+		where articleNO=#{articleNO}
 	</update>
-	
+
+	<!-- 글을 삭제하면 자신의 자식글까지 삭제하도록 계층 구조 쿼리문 실행 -->
+	<delete id="deleteArticle" parameterType="int">
+    <![CDATA[
+      delete from t_board
+      where articleNO in (
+         SELECT articleNO FROM  t_board
+         START WITH articleNO = #{articleNO}
+         CONNECT BY PRIOR articleNO = parentNO )
+    ]]>
+	</delete>
+
 </mapper>
