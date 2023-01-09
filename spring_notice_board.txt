@@ -17,5 +17,8 @@
 	- 기존 이미지 다른 이미지로 수정
         b. 추가 : 일반 글에 이미지 추가
 
+ ▼ 4-1. Spring Notice_board [스프링 게시판]
+      complete 4-1차: 글 다중 이미지 등록
+
  ▼ 3-3. Spring Notice_board [스프링 게시판]
       complete 3-3차: 글 삭제

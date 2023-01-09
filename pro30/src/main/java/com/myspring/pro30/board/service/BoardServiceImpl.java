@@ -24,10 +24,19 @@ public class BoardServiceImpl implements BoardService {
 		return articlesList;
 	}
 	
-	//단일 이미지 추가하기
-	@Override
+	// 단일 이미지 추가하기
+	/*@Override
 	public int addNewArticle(Map articleMap) throws Exception {
 		return boardDAO.insertNewArticle(articleMap);
+	}*/
+	
+	// 다중 이미지 추가하기
+	@Override
+	public int addNewArticle(Map articleMap) throws Exception{
+		int articleNO = boardDAO.insertNewArticle(articleMap);
+		articleMap.put("articleNO", articleNO);
+		boardDAO.insertNewImage(articleMap);
+		return articleNO;
 	}
 		
 	//단일 파일 보이기

@@ -235,6 +235,34 @@ aop를 추가 및 체크
 
 ---
 ---
+
+#### 4️⃣ - 1️⃣ complete - 글 다중 이미지 등록 [INSERT & `foreach` <u>tag</u>]
+
+<br>
+
+##### ◾ 글 작성 왼쪽 하단의 '파일 추가' 버튼 클릭 할 때마다 '파일 선택' 버튼 생성
+
+<img src="images/4_1complete/Register_multiple_images.png" width="500" height="300">
+
+###### ◾ 등록 메시지
+
+<img src="images/4_1complete/message.png" width="300" height="200">
+
+###### ◾ 데이터베이스 입력 및 폴더에 파일 생성
+
+<img src="images/4_1complete/database.png" width="300" height="200">
+
+<img src="images/4_1complete/folder.png" width="300" height="200">
+<img src="images/4_1complete/folder_8.png" width="300" height="200">
+<img src="images/4_1complete/folder_8.png" width="300" height="200">
+
+```
+다만, 중복되는 이미지는 여러 이미지 파일로 생성하지 않는다.
+(3개 이미지 등록하였지만 2개 이미지 존재)
+```
+
+---
+
 <!--1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ -->
 
 

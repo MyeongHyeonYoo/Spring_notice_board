@@ -21,16 +21,15 @@ request.setCharacterEncoding("UTF-8");
 		}
 	}
 	function backToList(obj) {
-		obj.action="${contextPath}/board/listArticles.do";
+		obj.action = "${contextPath}/board/listArticles.do";
 		obj.submit();
 	}
 
-	/* var cnt = 1;
+	var cnt = 1;
 	function fn_addFile() {
-		$("#d_file")
-				.append("<br>" + "<input type='file' name='file"+cnt+"' />");
+		$("#d_file").append("<br>" + "<input type='file' name='file"+cnt+"' />");
 		cnt++;
-	} */
+	}
 </script>
 <title>글쓰기창</title>
 </head>
@@ -51,19 +50,15 @@ request.setCharacterEncoding("UTF-8");
 				<td align="right" valign="top"><br>글내용:</td>
 				<td colspan=2><textarea name="content" rows="10" cols="65" maxlength="4000"></textarea></td>
 			</tr>
-			<tr>
+			<!--  <tr>
 				<td align="right">이미지파일 첨부: </td>
 				<td><input type="file" name="imageFileName" onchange="readURL(this);" /></td>
 				<td><img id="preview" src="#" width=200 height=200 /></td>
-
-
-				<!-- <td align="right">이미지파일 첨부</td>
-				<td align="left"><input type="button" value="파일 추가"
-					onClick="fn_addFile()" /></td> -->
-
-			</tr>
+			</tr> -->
 			<tr>
-				<td colspan="4"><div id="d_file"></div></td>
+				<td align="right">이미지파일 첨부</td>
+				<td align="left"><input type="button" value="파일 추가" onClick="fn_addFile()" /></td>
+				<td><div id="d_file"></div></td>
 			</tr>
 			<tr>
 				<td align="right"></td>
