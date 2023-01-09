@@ -187,7 +187,7 @@ public class BoardControllerImpl implements BoardController {
 	}
 	
 	//한개의 이미지 보여주기
-	@RequestMapping(value="/board/viewArticle.do" ,method = RequestMethod.GET)
+	/*@RequestMapping(value="/board/viewArticle.do" ,method = RequestMethod.GET)
 	public ModelAndView viewArticle(@RequestParam("articleNO") int articleNO,
                                     HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = (String)request.getAttribute("viewName");
@@ -195,6 +195,18 @@ public class BoardControllerImpl implements BoardController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName(viewName);
 		mav.addObject("article", articleVO);
+		return mav;
+	}*/
+	
+	//다중 이미지 보여주기
+	@RequestMapping(value="/board/viewArticle.do" ,method = RequestMethod.GET)
+	public ModelAndView viewArticle(@RequestParam("articleNO") int articleNO,
+			  HttpServletRequest request, HttpServletResponse response) throws Exception{
+		String viewName = (String)request.getAttribute("viewName");
+		Map articleMap=boardService.viewArticle(articleNO);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName(viewName);
+		mav.addObject("articleMap", articleMap);
 		return mav;
 	}
 	

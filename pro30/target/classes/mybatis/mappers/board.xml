@@ -97,5 +97,12 @@
     ]]>
 	</select>
 
+	<select id="selectImageFileList" resultMap="imgResult" parameterType="int">
+    <![CDATA[
+      SELECT * from t_imageFile
+      where articleNO=#{articleNO}	
+    ]]>
+	</select>
+
 
 </mapper>

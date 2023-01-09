@@ -1,11 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <%
 request.setCharacterEncoding("UTF-8");
 %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<!-- 바인딩 된 데이터를 article 속성명(${article.articleNO})으로 받았던 것을 Map으로 받아 준다. -->
+<c:set var="article"  value="${articleMap.article}" />
+<c:set var="imageFileList"  value="${articleMap.imageFileList}" />
+
 
 <head>
 <meta charset="UTF-8">
@@ -109,7 +115,8 @@ request.setCharacterEncoding("UTF-8");
 			</tr>
 
 			<c:choose>
-				<c:when test="${not empty article.imageFileName && article.imageFileName!='null' }">
+				<%-- 한 개 이미지 파일 출력 --%>
+				<%-- <c:when test="${not empty article.imageFileName && article.imageFileName!='null' }">
 					<tr>
 						<td width="150" align="center" bgcolor="#FF9933" rowspan="2">이미지</td>
 						<td><input type="hidden" name="originalFileName" value="${article.imageFileName }" /> <img
@@ -119,7 +126,22 @@ request.setCharacterEncoding("UTF-8");
 						<td></td>
 						<td><input type="file" name="imageFileName " id="i_imageFileName" disabled onchange="readURL(this);" /></td>
 					</tr>
+				</c:when> --%>
+				
+				<%-- 다중 이미지 파일 출력 --%>
+				<c:when test="${not empty imageFileList && imageFileList!='null' }">
+					<c:forEach var="item" items="${imageFileList}" varStatus="status">
+						<tr>
+							<td width="150" align="center" bgcolor="#FF9933" rowspan="2">이미지${status.count }</td>
+							<td><input type="hidden" name="originalFileName" value="${item.imageFileName }" /> <img src="${contextPath}/download.do?articleNO=${article.articleNO}&imageFileName=${item.imageFileName}"
+								id="preview" /><br></td>
+						</tr>
+						<tr>
+							<td><input type="file" name="imageFileName " id="i_imageFileName" disabled onchange="readURL(this);" /></td>
+						</tr>
+					</c:forEach>
 				</c:when>
+
 				<c:otherwise>
 					<!-- 기존 소스 -->
 					<%-- <tr id="tr_file_upload">
@@ -131,19 +153,19 @@ request.setCharacterEncoding("UTF-8");
 						<td></td>
 						<td><img id="preview" /><br> <input type="file" name="imageFileName " id="i_imageFileName" disabled onchange="readURL(this);" /></td>
 					</tr> --%>
-					
+
 					<!-- 강의에서 추가 된 것 - 디자인적인 것 고려하여 추가 -->
 					<tr id="tr_file_upload">
 						<td width="150" align="center" bgcolor="#FF9933" rowspan="2">이미지</td>
 						<!-- 기존 이미지 파일을 hidden type으로 저장 -->
 						<td><input type="hidden" name="originalFileName" value="${article.imageFileName }" /></td>
 					</tr>
-					
-					<tr id="tr_file_upload2" style="visibility:hidden">
+
+					<tr id="tr_file_upload2" style="visibility: hidden">
 						<td><img id="preview" /></td>
 						<td></td>
 					</tr>
-					<tr id="tr_file_upload3" style="visibility:hidden">
+					<tr id="tr_file_upload3" style="visibility: hidden">
 						<td></td>
 						<td><input type="file" name="imageFileName " id="i_imageFileName" disabled onchange="readURL(this);" /></td>
 					</tr>

@@ -47,8 +47,11 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.insert("mapper.board.insertNewImage",imageFileList);
 	}
 	
-	private int selectNewImageFileNO() throws DataAccessException {
-		return sqlSession.selectOne("mapper.board.selectNewImageFileNO");
+	@Override
+	public List selectImageFileList(int articleNO) throws DataAccessException {
+		List<ImageVO> imageFileList = null;
+		imageFileList = sqlSession.selectList("mapper.board.selectImageFileList",articleNO);
+		return imageFileList;
 	}
 	
 	// 글 선택
@@ -73,6 +76,9 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void deleteArticle(int articleNO) throws DataAccessException {
 		sqlSession.delete("mapper.board.deleteArticle", articleNO);
-		
+	}
+	
+	private int selectNewImageFileNO() throws DataAccessException {
+		return sqlSession.selectOne("mapper.board.selectNewImageFileNO");
 	}
 }

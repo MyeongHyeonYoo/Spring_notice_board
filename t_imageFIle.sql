@@ -7,4 +7,7 @@ CREATE TABLE t_imageFile (
     REFERENCES t_board(articleNO) ON DELETE CASCADE
 );
 
+commit;
+
 select * from t_imageFile;
+select * from t_board order by articleNO desc;

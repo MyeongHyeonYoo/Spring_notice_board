@@ -127,7 +127,7 @@ aop를 추가 및 체크
 
 <br>
 
-> p.s
+> p.s.
 ```
 ▶ 서버 실행하자마자 접속한 후 글쓰기 눌렀을 때 가끔 로그인 없이 들어가지는 버그 존재
 
@@ -230,13 +230,14 @@ aop를 추가 및 체크
 <img src="images/3_3complete/result.png" width="500" height="300">
 
 ##### ◾ 삭제 전 · 후 폴더
+
 <img src="images/3_3complete/folder.png" width="300" height="200">
 <img src="images/3_3complete/folder_result.png" width="300" height="200">
 
 ---
 ---
 
-#### 4️⃣ - 1️⃣ complete - 글 다중 이미지 등록 [INSERT & `foreach` <u>tag</u>]
+#### 4️⃣ - 1️⃣ complete - 글 다중 이미지 등록 [INSERT & `foreach` <u>tag</u> / Map]
 
 <br>
 
@@ -262,6 +263,40 @@ aop를 추가 및 체크
 ```
 
 ---
+
+#### 4️⃣ - 2️⃣ complete - 글 다중 이미지 출력 [SELECT & `foreach` <u>tag</u> / Map] 
+
+##### ◾ 이미지 다중 표시
+
+<img src="images/4_2complete/image_multiple_output.png" width="500" height="300">
+
+<br>
+
+##### ◾ 이미지 다중 표시한 글 삭제(8번글)
+
+<img src="images/4_2complete/image_multiple_output_delete.png" width="500" height="300">
+<img src="images/4_2complete/delete_message.png" width="300" height="200">
+
+###### ◾ 데이터베이스 삭제 완료
+
+<img src="images/4_2complete/database_result.png" width="300" height="200">
+
+###### ◾ 폴더 삭제 완료
+
+<img src="images/4_2complete/folder.png" width="300" height="200">
+<img src="images/4_2complete/folder_reslut.png" width="300" height="200">
+
+<br>
+
+```
+글 다중 이미지에 대한 수정 기능은 제외
+```
+
+<br>
+<br>
+<br>
+
+# ◾ THE END ◾ 
 
 <!--1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ -->
 

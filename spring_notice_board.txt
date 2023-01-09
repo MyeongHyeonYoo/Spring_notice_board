@@ -20,5 +20,6 @@
  ▼ 4-1. Spring Notice_board [스프링 게시판]
       complete 4-1차: 글 다중 이미지 등록
 
- ▼ 3-3. Spring Notice_board [스프링 게시판]
-      complete 3-3차: 글 삭제
+ ▼ 4-2. Spring Notice_board [스프링 게시판]
+      complete 4-2차: 글 다중 이미지 삭제
+      (글 다중 이미지에 대한 수정 제외)
